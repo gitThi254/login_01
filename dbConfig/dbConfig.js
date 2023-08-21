@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
 export async function connect() {
   try {
-    mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-    });
+    mongoose.connect(
+      "mongodb+srv://admin:1234@cluster0.ihjptng.mongodb.net/?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+      }
+    );
     mongoose.set("strictQuery", false);
     const connection = mongoose.connection;
     connection.on("connected", () => {
