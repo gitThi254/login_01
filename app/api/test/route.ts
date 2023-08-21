@@ -15,7 +15,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const data = { username: "db connected" };
-    const user = await User.findOne({ email: "thinguyen01683@gmail.com" });
+    const user = await User.find();
     console.log(user);
 
     return NextResponse.json(data, { status: 200 });
