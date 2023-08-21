@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModels";
-
+connect();
 export async function GET() {
   try {
     return NextResponse.json({ message: "hello world" }, { status: 200 });
