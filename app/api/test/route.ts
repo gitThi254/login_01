@@ -15,6 +15,9 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const data = { username: "db connected" };
+    const user = await User.findOne({ email: "thinguyen01683@gmail.com" });
+    console.log(user);
+
     return NextResponse.json(data, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
