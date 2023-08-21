@@ -6,8 +6,8 @@ export default function Home() {
   const [data, setData] = useState();
   const url = "/api/test";
   const test = async () => {
-    const res = await axios.get(url);
-    setData(res.data?.message);
+    const res = await axios.post(url);
+    setData(res.data?.username);
   };
 
   useEffect(() => {
