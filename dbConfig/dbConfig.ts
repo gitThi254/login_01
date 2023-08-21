@@ -2,9 +2,11 @@ import mongoose from "mongoose";
 
 export async function connect() {
   try {
-    mongoose.connect(process.env.MONGO_URI!);
+    mongoose.set("strictQuery", false);
+    mongoose.connect(
+      "mongodb+srv://admin:1234@cluster0.ihjptng.mongodb.net/?retryWrites=true&w=majority"
+    );
     const connection = mongoose.connection;
-
     connection.on("connected", () => {
       console.log("MongoDB connected successfully");
     });
